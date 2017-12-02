@@ -1,3 +1,6 @@
+// http://adventofcode.com/2017/day/2
+// TODO refactor
+
 package main
 
 import (
@@ -25,6 +28,33 @@ const day2Input = `414	382	1515	319	83	1327	116	391	101	749	1388	1046	1427	105	1
 1704	2194	1753	146	2063	1668	1280	615	163	190	2269	1856	150	158	2250	2459`
 
 
+
+func divisionSolution() int64 {
+	lines := strings.Split(day2Input,"\n")
+	var sum int64 = 0
+	for _, line := range lines {
+		numbers := strings.Split(line, "\t")
+		var rowNums []int64
+
+		for _, number := range numbers {
+			num, _ := strconv.ParseInt(number, 10, 64)
+			for _, otherNumber := range rowNums {
+				if num < otherNumber {
+					if otherNumber % num == 0 {
+						sum += otherNumber / num
+					}
+				} else {
+					if num % otherNumber == 0 {
+						sum += num / otherNumber
+					}
+				}
+			}
+			rowNums = append(rowNums, num)
+		}
+	}
+	return sum
+}
+
 func main() {
 	var diffSum int64 = 0
 	lines := strings.Split(day2Input,"\n")
@@ -44,4 +74,5 @@ func main() {
 		diffSum += rowMax - rowMin
 	}
 	fmt.Println(diffSum)
-}
+	fmt.Println(divisionSolution())
+	}
