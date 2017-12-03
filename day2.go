@@ -1,6 +1,3 @@
-// http://adventofcode.com/2017/day/2
-// TODO refactor
-
 package main
 
 import (
@@ -26,8 +23,6 @@ const day2Input = `414	382	1515	319	83	1327	116	391	101	749	1388	1046	1427	105	1
 334	275	395	128	347	118	353	281	430	156	312	386	160	194	63	141
 146	1116	153	815	2212	2070	599	3018	2640	47	125	2292	165	2348	2694	184
 1704	2194	1753	146	2063	1668	1280	615	163	190	2269	1856	150	158	2250	2459`
-
-
 
 func divisionSolution() int64 {
 	lines := strings.Split(day2Input,"\n")
@@ -74,5 +69,5 @@ func main() {
 		diffSum += rowMax - rowMin
 	}
 	fmt.Println(diffSum)
-	fmt.Println(divisionSolution())
+
 	}
