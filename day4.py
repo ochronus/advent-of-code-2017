@@ -1,3 +1,5 @@
+# http://adventofcode.com/2017/day/4
+
 input_ = open('day4-input.txt').read().splitlines()
 
 def part1(lines):
