@@ -4,7 +4,6 @@ import scala.math.{abs, max}
 object Day11 {
 
 
-
   def walk(steps: List[String], x: Int, y: Int, z: Int, max_distance: Int): (Int, Int) = {
     val distance =(abs(x) + abs(y) + abs(z)) / 2
       steps match {
